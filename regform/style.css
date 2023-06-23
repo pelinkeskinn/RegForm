@@ -1,29 +1,34 @@
 body {
 	margin:  0;
+	background: #a2a7ff;
 }
 .page-content {
 	width: 100%;
+	height: 100%;
 	margin:  0 auto;
-	background: #a2a7ff;
 	display: flex;
-	display: -webkit-flex;
 	justify-content: center;
 	align-items: center;
 }
-.form-content  {
+.form-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background: #fff;
 	width: 900px;
 	border-radius: 10px;
 	box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
 	margin: 95px 0;
-	position: relative;
-}
-.form-content .form-detail {
-	position: relative;
-	width: 100%;
+  }
+  
+  .form-content .form-detail {
 	display: flex;
+	flex-direction: row;
+	width: 100%;
 	display: -webkit-flex;
-}
+  }
+  
 .form-content .form-detail h2 {
 	font-weight: 500;
 	font-size: 25px;
@@ -33,13 +38,13 @@ body {
 .form-content .form-detail .form-left {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
-	width: 100%;
+	width: 50%;
 }
 .form-content .form-detail .form-left h2 {
 	color: #2271dd;
 }
 .form-content .form-detail .form-right {
-	width: 100%;
+	width: 50%;
 	background: #4e36ff;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -49,20 +54,22 @@ body {
 }
 .form-content .form-detail .form-group {
 	display: flex;
-	display: -webkit-flex;
 }
 .form-content .form-detail .form-row {
-	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	margin-bottom: 24px;
 	padding-left: 60px;
-    padding-right: 50px;
-}
+	padding-right: 50px;
+  }
+  
 .form-content .form-detail .form-left .form-group .form-row.form-row-1 {
-	width: 50%;
+	width: 100%;
 	padding: 0 12px 0 60px;
 }
 .form-content .form-detail .form-left .form-group .form-row.form-row-2 {
-	width: 50%;
+	width: 100%;
 	padding: 0 50px 0 12px;
 }
 .form-content .form-detail .form-left .form-group .form-row.form-row-3 {
@@ -94,11 +101,14 @@ body {
     box-sizing: border-box;
 }
 .form-content .form-detail select {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	background: 0 0;
-	position: relative;
 	z-index: 9;
 	cursor: pointer;
-}
+  }
+  
 .form-content .form-detail .form-left select {
 	color: #666;
 }
@@ -106,12 +116,13 @@ body {
 	color: #f2f2f2;
 }
 .form-content .form-detail .select-btn {
-	z-index: 0;
-    position: absolute;
-    top: 30%;
-    right: 11.5%;
-    font-size: 18px;
-}
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	margin-top: 15%;
+	margin-right: 11.5%;
+  }
+  
 .form-content .form-detail .form-left .select-btn {
     color: #666;
 }
@@ -153,40 +164,45 @@ body {
 	background: #4835d4;
 }
 .form-content .form-detail .form-checkbox {
+	display: flex;
+	flex-direction: col;
+	align-items: center;
 	margin-top: 37px;
+	margin-left: 25px;
 	padding: 0 50px 0 60px;
-	position: relative;
-}
+  }
+  
 .form-content .form-detail .form-checkbox input {
-	position: absolute;
+	display: flex;
     opacity: 0;
 }
 .form-content .form-detail .form-checkbox .checkmark {
-	position: absolute;
-    top: 1px;
-    left: 60px;
-    height: 15px;
-    width: 15px;
-    border: 1px solid #e5e5e5;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 15px;
+	width: 15px;
+	margin-left: -25px;
+	border: 1px solid #e5e5e5;
+	cursor: pointer;
+	margin-top: -51px;
 }
+  
 .form-content .form-detail .form-checkbox .checkmark::after {
 	content: "";
-    position: absolute;
-    left: 5px;
-   	top: 1px;
-    width: 3px;
-    height: 8px;
-    border: 1px solid #fff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    display: none;
+	display: none;
+	width: 3px;
+	height: 8px;
+	border: 1px solid #fff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
 }
-.form-content .form-detail .form-checkbox input:checked ~ .checkmark::after {
-    display: block;
+  
+  .form-content .form-detail .form-checkbox input[type="checkbox"]:checked + .checkmark::after {
+	display: block;
 }
 .form-content .form-detail .form-checkbox p {
-    margin-left: 34px;
+    margin-bottom: 0px;
     color: #e5e5e5;
     font-size: 14px;
     font-weight: 400;
